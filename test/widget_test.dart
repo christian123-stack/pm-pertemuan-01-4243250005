@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pm_pertemuan_01_4243250005/main.dart';
+import 'package:pm_pertemuan_01_4243250005/tr1.dart';
 
 void main() {
   testWidgets('shows student identity and responds to the greeting button',

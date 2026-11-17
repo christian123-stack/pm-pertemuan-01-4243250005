@@ -114,15 +114,3 @@ sekaligus memperlihatkan struktur widget, tema, dan interaksi tombol. Pilihan
 teknologi terbaik bergantung pada kebutuhan performa, fitur perangkat, waktu,
 dan kemampuan tim.
 
-## Repository GitHub publik
-
-Nama repository yang diminta: `pm-pertemuan-01-4243250005` (**Public**).
-Repository lokal ini memiliki riwayat commit bertahap. Setelah membuat
-repository kosong dengan nama tersebut di GitHub, hubungkan dan unggah:
-
-```powershell
-git remote add origin https://github.com/<USERNAME>/pm-pertemuan-01-4243250005.git
-git push -u origin main
-```
-
-**URL repository publik:** isi setelah repository dibuat dan berhasil di-push.
