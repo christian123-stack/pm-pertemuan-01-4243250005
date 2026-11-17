@@ -56,6 +56,11 @@ setujui dialog otorisasi pada perangkat, lalu periksa `adb devices`. Ada dua
 salinan `adb` pada komputer ini; pastikan Android Studio dan terminal memakai
 salinan dari Android SDK yang sama.
 
+Emulator `Medium_Phone` terdaftar, tetapi percobaan menjalankannya berhenti
+dengan kode 1. Pemeriksaan akselerasi melaporkan AEHD tersedia, jadi penyebab
+startup belum teridentifikasi. Untuk bukti perangkat, coba jalankan emulator
+dari Android Studio Device Manager atau hubungkan ponsel Android melalui USB.
+
 Pemeriksaan aplikasi:
 
 ```powershell
@@ -70,10 +75,11 @@ Semua perintah pemeriksaan aplikasi di atas berhasil. APK debug dibuat di
 
 > **Bukti pengumpulan:** jalankan aplikasi pada emulator Android atau perangkat
 > fisik, lalu tambahkan tangkapan layar hasil `flutter doctor -v` dan layar
-> aplikasi ke repository sebelum dikumpulkan. Saat proyek ini disiapkan,
-> belum ada emulator atau perangkat Android yang terhubung, sehingga tangkapan
-> layar perangkat belum tersedia. Jangan gunakan tangkapan layar browser sebagai
-> pengganti bukti emulator/perangkat jika rubrik meminta bukti tersebut.
+> aplikasi ke repository sebelum dikumpulkan. Saat proyek ini disiapkan, tidak
+> ada emulator atau perangkat Android yang berhasil terhubung, sehingga
+> tangkapan layar perangkat belum tersedia. Jangan gunakan tangkapan layar
+> browser sebagai pengganti bukti emulator/perangkat jika rubrik meminta bukti
+> tersebut.
 
 ## Esai singkat: Native, Hybrid, dan Cross-platform
 
