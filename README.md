@@ -27,39 +27,43 @@ Untuk menjalankan aplikasi di Chrome:
 flutter run -d chrome
 ```
 
+Untuk menjalankan di HP Android melalui USB, aktifkan USB debugging, setujui
+otorisasi pada HP, lalu pilih perangkat yang muncul di `flutter devices`:
+
+```powershell
+flutter devices
+flutter run -d DEVICE_ID
+```
+
+Ganti `DEVICE_ID` dengan ID yang ditampilkan oleh `flutter devices`.
+
 ## Hasil verifikasi
 
 ### Keluaran `flutter --version`
 
 ```text
 Flutter 3.47.9 • channel stable
-Dart 3.13.7
-DevTools 2.60.0
+Dart 3.13.7 • DevTools 2.60.0
 ```
 
-### Ringkasan `flutter doctor -v`
+### Ringkasan `flutter doctor`
 
 ```text
-[✓] Flutter (Channel stable, 3.47.9)
-[✓] Windows Version
-[✓] Android toolchain (Android SDK 36.1.0; licenses accepted)
-[!] Android toolchain: multiple adb binaries found
-[X] Visual Studio: not installed
+[✓] Flutter 3.47.9 (stable) • Windows 11
+[✓] Android toolchain • Android SDK 36.1.0
+[!] Multiple adb binaries found
 [✓] Chrome
-[✓] Connected device: Windows, Chrome, Edge
+[X] Visual Studio not installed (untuk aplikasi desktop Windows)
+[✓] Connected device (4 available)
 [✓] Network resources
 ```
 
-Visual Studio hanya diperlukan untuk membangun aplikasi desktop Windows, bukan
-Android atau web. Jika perangkat Android tidak muncul, aktifkan USB debugging,
-setujui dialog otorisasi pada perangkat, lalu periksa `adb devices`. Ada dua
-salinan `adb` pada komputer ini; pastikan Android Studio dan terminal memakai
-salinan dari Android SDK yang sama.
-
-Emulator `Medium_Phone` terdaftar, tetapi percobaan menjalankannya berhenti
-dengan kode 1. Pemeriksaan akselerasi melaporkan AEHD tersedia, jadi penyebab
-startup belum teridentifikasi. Untuk bukti perangkat, coba jalankan emulator
-dari Android Studio Device Manager atau hubungkan ponsel Android melalui USB.
+Perangkat Android yang terdeteksi adalah **SM A245F**, Android 16 (API 36),
+terhubung melalui USB. Peringatan dua instalasi `adb` tidak mencegah perangkat
+terdeteksi pada pemeriksaan ini. Visual Studio hanya diperlukan untuk target
+desktop Windows, bukan Android atau web. Jika HP tidak muncul, periksa kabel
+data, aktifkan USB debugging, setujui dialog otorisasi, lalu jalankan
+`adb devices`. ID unik perangkat tidak dicantumkan di README.
 
 Pemeriksaan aplikasi:
 
@@ -73,13 +77,19 @@ flutter build apk --debug
 Semua perintah pemeriksaan aplikasi di atas berhasil. APK debug dibuat di
 `build/app/outputs/flutter-apk/app-debug.apk`.
 
-> **Bukti pengumpulan:** jalankan aplikasi pada emulator Android atau perangkat
-> fisik, lalu tambahkan tangkapan layar hasil `flutter doctor -v` dan layar
-> aplikasi ke repository sebelum dikumpulkan. Saat proyek ini disiapkan, tidak
-> ada emulator atau perangkat Android yang berhasil terhubung, sehingga
-> tangkapan layar perangkat belum tersedia. Jangan gunakan tangkapan layar
-> browser sebagai pengganti bukti emulator/perangkat jika rubrik meminta bukti
-> tersebut.
+## Bukti tangkapan layar
+
+### Versi Flutter
+
+![Keluaran flutter --version](screenshots/flutter-version.png)
+
+### Pemeriksaan Flutter Doctor
+
+![Keluaran flutter doctor](screenshots/flutter-doctor.png)
+
+### Aplikasi berjalan di HP Android
+
+![Hello World Flutter berjalan di Samsung SM A245F](screenshots/app-android.jpg)
 
 ## Esai singkat: Native, Hybrid, dan Cross-platform
 
@@ -106,9 +116,13 @@ dan kemampuan tim.
 
 ## Repository GitHub publik
 
-Gunakan nama repository `pm-pertemuan-01-4243250005`, atur visibility menjadi
-**Public**, lalu unggah isi folder ini. Buat beberapa commit kecil yang
-menunjukkan tahapan pengerjaan (misalnya setup proyek, tampilan Hello World,
-dan dokumentasi/tes), bukan hanya satu commit akhir. Pastikan hasil perintah,
-tangkapan layar perangkat, dan URL repository disertakan sebelum mengirim tautan
-repository melalui LMS.
+Nama repository yang diminta: `pm-pertemuan-01-4243250005` (**Public**).
+Repository lokal ini memiliki riwayat commit bertahap. Setelah membuat
+repository kosong dengan nama tersebut di GitHub, hubungkan dan unggah:
+
+```powershell
+git remote add origin https://github.com/<USERNAME>/pm-pertemuan-01-4243250005.git
+git push -u origin main
+```
+
+**URL repository publik:** isi setelah repository dibuat dan berhasil di-push.
